@@ -155,6 +155,17 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     return tmp_ret;
 }
 
+- (NSString *)toHex
+{
+  char* p = (char*)[self cStringUsingEncoding:NSUnicodeStringEncoding];
+  NSString *hexStr = @"";
+  for(int i=0; i<self.length; ++i) {
+    unsigned char s = *(p+i);
+    hexStr = [hexStr stringByAppendingFormat:@"%02X",s];
+  }
+  return hexStr;
+}
+
 + (NSString *)getUUID
 {
     CFUUIDRef     UUID;

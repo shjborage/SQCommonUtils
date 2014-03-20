@@ -15,6 +15,7 @@
 + (NSString *)localizedString:(NSString *)key;
 + (NSString *)base64encode:(NSString*)str;
 - (NSString *)toUnicode;                // add by shjborage 20111106.
+- (NSString *)toHex;                    // add by shjborage 20140120.
 + (NSString *)getUUID;                  // add by shjborage Jan 24, 2012
 + (NSString *)getCurrentDateTime:(NSString *)strFormat;
                                         // modify by shjborage July 9, 2012
