@@ -7,11 +7,13 @@
 
 #import "SQStringUtils.h"
 
-static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"; 
+static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
 @implementation NSString (NSStringUtils)
 
-- (NSString*)encodeAsURIComponent
+#pragma mark - encode/decode
+
+- (NSString *)encodeAsURIComponent
 {
 	const char* p = [self UTF8String];
 	NSMutableString* result = [NSMutableString string];
@@ -27,40 +29,40 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 	return result;
 }
 
-+ (NSString*)base64encode:(NSString*)str 
++ (NSString *)base64encode:(NSString *)str
 {
-    if ([str length] == 0)
-        return @"";
-
-    const char *source = [str UTF8String];
-    int strlength  = strlen(source);
-    
-    char *characters = malloc(((strlength + 2) / 3) * 4);
-    if (characters == NULL)
-        return nil;
-
-    NSUInteger length = 0;
-    NSUInteger i = 0;
-
-    while (i < strlength) {
-        char buffer[3] = {0,0,0};
-        short bufferLength = 0;
-        while (bufferLength < 3 && i < strlength)
-            buffer[bufferLength++] = source[i++];
-        characters[length++] = encodingTable[(buffer[0] & 0xFC) >> 2];
-        characters[length++] = encodingTable[((buffer[0] & 0x03) << 4) | ((buffer[1] & 0xF0) >> 4)];
-        if (bufferLength > 1)
-            characters[length++] = encodingTable[((buffer[1] & 0x0F) << 2) | ((buffer[2] & 0xC0) >> 6)];
-        else characters[length++] = '=';
-        if (bufferLength > 2)
-            characters[length++] = encodingTable[buffer[2] & 0x3F];
-        else characters[length++] = '=';
-    }
-    
-    return [[[NSString alloc] initWithBytesNoCopy:characters length:length encoding:NSASCIIStringEncoding freeWhenDone:YES] autorelease];
+  if ([str length] == 0)
+    return @"";
+  
+  const char *source = [str UTF8String];
+  int strlength  = strlen(source);
+  
+  char *characters = malloc(((strlength + 2) / 3) * 4);
+  if (characters == NULL)
+    return nil;
+  
+  NSUInteger length = 0;
+  NSUInteger i = 0;
+  
+  while (i < strlength) {
+    char buffer[3] = {0,0,0};
+    short bufferLength = 0;
+    while (bufferLength < 3 && i < strlength)
+      buffer[bufferLength++] = source[i++];
+    characters[length++] = encodingTable[(buffer[0] & 0xFC) >> 2];
+    characters[length++] = encodingTable[((buffer[0] & 0x03) << 4) | ((buffer[1] & 0xF0) >> 4)];
+    if (bufferLength > 1)
+      characters[length++] = encodingTable[((buffer[1] & 0x0F) << 2) | ((buffer[2] & 0xC0) >> 6)];
+    else characters[length++] = '=';
+    if (bufferLength > 2)
+      characters[length++] = encodingTable[buffer[2] & 0x3F];
+    else characters[length++] = '=';
+  }
+  
+  return [[[NSString alloc] initWithBytesNoCopy:characters length:length encoding:NSASCIIStringEncoding freeWhenDone:YES] autorelease];
 }
 
-- (NSString*)escapeHTML
+- (NSString *)escapeHTML
 {
 	NSMutableString* s = [NSMutableString string];
 	
@@ -100,7 +102,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 	return s;
 }
 
-- (NSString*)unescapeHTML
+- (NSString *)unescapeHTML
 {
 	NSMutableString* s = [NSMutableString string];
 	NSMutableString* target = [[self mutableCopy] autorelease];
@@ -139,144 +141,144 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 	return s;
 }
 
-+ (NSString *)localizedString:(NSString*)key
-{
-    return NSLocalizedString(key, nil);
-}
-
 - (NSString *)toUnicode
 {
-//    NSStringEncoding enc_gb2312 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-//    char* temp = (char*)[[NSString stringWithString:target] cStringUsingEncoding:NSUnicodeStringEncoding];
-//    return [NSString stringWithCString:temp encoding:NSUnicodeStringEncoding];
-    NSMutableString* target = [[self mutableCopy] autorelease];
-    NSData *tmp_data = [target dataUsingEncoding:NSUnicodeStringEncoding];
-    NSString *tmp_ret = [[[NSString alloc] initWithData:tmp_data encoding:NSUnicodeStringEncoding] autorelease];
-    return tmp_ret;
-}
-
-- (NSString *)toHex
-{
-  char* p = (char*)[self cStringUsingEncoding:NSUnicodeStringEncoding];
-  NSString *hexStr = @"";
-  for(int i=0; i<self.length; ++i) {
-    unsigned char s = *(p+i);
-    hexStr = [hexStr stringByAppendingFormat:@"%02X",s];
-  }
-  return hexStr;
+  //    NSStringEncoding enc_gb2312 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+  //    char* temp = (char*)[[NSString stringWithString:target] cStringUsingEncoding:NSUnicodeStringEncoding];
+  //    return [NSString stringWithCString:temp encoding:NSUnicodeStringEncoding];
+  NSMutableString* target = [[self mutableCopy] autorelease];
+  NSData *tmp_data = [target dataUsingEncoding:NSUnicodeStringEncoding];
+  NSString *tmp_ret = [[[NSString alloc] initWithData:tmp_data encoding:NSUnicodeStringEncoding] autorelease];
+  return tmp_ret;
 }
 
 + (NSString *)getUUID
 {
-    CFUUIDRef     UUID;
-    CFStringRef   UUIDString;
-    char          buffer[100];
-    memset(buffer, 0, 100);
-    
-    UUID = CFUUIDCreate(kCFAllocatorDefault);
-    UUIDString = CFUUIDCreateString(kCFAllocatorDefault, UUID);
-    
-    // This is the safest way to obtain a C string from a CFString.
-    CFStringGetCString(UUIDString, buffer, 100, kCFStringEncodingASCII);
-    CFRelease(UUIDString);
-    CFRelease(UUID);
-    return [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
+  CFUUIDRef     UUID;
+  CFStringRef   UUIDString;
+  char          buffer[100];
+  memset(buffer, 0, 100);
+  
+  UUID = CFUUIDCreate(kCFAllocatorDefault);
+  UUIDString = CFUUIDCreateString(kCFAllocatorDefault, UUID);
+  
+  // This is the safest way to obtain a C string from a CFString.
+  CFStringGetCString(UUIDString, buffer, 100, kCFStringEncodingASCII);
+  CFRelease(UUIDString);
+  CFRelease(UUID);
+  return [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
 }
 
-+ (NSString *)getCurrentDateTime:(NSString *)strFormat
-{
-/*    // string to date
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate* date_new = [df dateFromString:@"2012-01-24 00:11:11"];
-    
-    // date to dateComponets
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate* today = [NSDate date];
-    NSUInteger uFlag = kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay |kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond;
-    NSDateComponents *dcToday = [gregorian components:uFlag fromDate:today];
- 
-    // other usage
-    NSDate *date_now = [NSDate date];
-    NSString *strDate = [date_now descriptionWithLocale:[NSLocale currentLocale]];
-    return [strDate substringToIndex:[strDate rangeOfString:@"China Standard Time"].location - 1];
- */
-    NSDate *date_now = [NSDate date];
-    NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
-//    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    if ([strFormat length] > 0)
-        [df setDateFormat:strFormat];
-    else 
-        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    return [df stringFromDate:date_now];
-}
-
-/*
- *  默认的length返回 unicode长度，这个中文汉字长度为2，英文数字为1
+/*!
+ 默认的length返回 unicode长度，这个中文汉字长度为2，英文数字为1
  */
 - (int)charNumber
 {
-    int nLength = 0;
-    char* p = (char*)[self cStringUsingEncoding:NSUnicodeStringEncoding];
-    for (int i = 0; i < [self lengthOfBytesUsingEncoding:NSUnicodeStringEncoding]; i++) {
-        if (*p) {
-            p++;
-            nLength++;
-        } else {
-            p++;
-        }
+  int nLength = 0;
+  char* p = (char*)[self cStringUsingEncoding:NSUnicodeStringEncoding];
+  for (int i = 0; i < [self lengthOfBytesUsingEncoding:NSUnicodeStringEncoding]; i++) {
+    if (*p) {
+      p++;
+      nLength++;
+    } else {
+      p++;
     }
-    return nLength;
+  }
+  return nLength;
 }
 
-- (NSString *)useAsFileName             // add by shjborage Apr 18, 2012
+#pragma mark - datetime
+
++ (NSString *)getCurrentDateTime:(NSString *)strFormat
 {
-    NSString *strTmp = self;
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@"/" withString:@" "];
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@"\\" withString:@" "];
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@":" withString:@" "];
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@"*" withString:@" "];
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@"?" withString:@" "];
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@"\"" withString:@" "];
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@"<" withString:@" "];
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@">" withString:@" "];
-    strTmp = [strTmp stringByReplacingOccurrencesOfString:@"|" withString:@" "];
-    return strTmp;
+  /*    // string to date
+   NSDateFormatter *df = [[NSDateFormatter alloc] init];
+   [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+   NSDate* date_new = [df dateFromString:@"2012-01-24 00:11:11"];
+   
+   // date to dateComponets
+   NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+   NSDate* today = [NSDate date];
+   NSUInteger uFlag = kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay |kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond;
+   NSDateComponents *dcToday = [gregorian components:uFlag fromDate:today];
+   
+   // other usage
+   NSDate *date_now = [NSDate date];
+   NSString *strDate = [date_now descriptionWithLocale:[NSLocale currentLocale]];
+   return [strDate substringToIndex:[strDate rangeOfString:@"China Standard Time"].location - 1];
+   */
+  NSDate *date_now = [NSDate date];
+  NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+  //    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+  if ([strFormat length] > 0)
+    [df setDateFormat:strFormat];
+  else
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+  
+  return [df stringFromDate:date_now];
 }
 
 + (NSString *)getTimestamp
 {
-    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
-    NSTimeInterval a=[dat timeIntervalSince1970]*1000;
-    NSString *timeString = [NSString stringWithFormat:@"%f", a];
-    NSInteger location = [timeString rangeOfString:@"."].location;
-    timeString=[timeString substringToIndex:location];
-    
-    return timeString;
+  NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+  NSTimeInterval a=[dat timeIntervalSince1970]*1000;
+  NSString *timeString = [NSString stringWithFormat:@"%f", a];
+  NSInteger location = [timeString rangeOfString:@"."].location;
+  timeString=[timeString substringToIndex:location];
+  
+  return timeString;
 }
 
 - (NSDateComponents *)getDateComponents:(NSString *)strFormat
 {
-    // string to date
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    
-    if ([strFormat length] > 0)
-        [df setDateFormat:strFormat];//@"yyyy-MM-dd HH:mm:ss"];
-    else 
-        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    NSDate* date_new = [df dateFromString:self];
-    
-    // date to dateComponets
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSUInteger uFlag = kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay |kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond;
-    NSDateComponents *dcNew = [gregorian components:uFlag fromDate:date_new];
-    
-    [df release];
-    [gregorian release];
-    
-    return dcNew;
+  // string to date
+  NSDateFormatter *df = [[NSDateFormatter alloc] init];
+  
+  if ([strFormat length] > 0)
+    [df setDateFormat:strFormat];//@"yyyy-MM-dd HH:mm:ss"];
+  else
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+  
+  NSDate* date_new = [df dateFromString:self];
+  
+  // date to dateComponets
+  NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+  NSUInteger uFlag = kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay |kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond;
+  NSDateComponents *dcNew = [gregorian components:uFlag fromDate:date_new];
+  
+  [df release];
+  [gregorian release];
+  
+  return dcNew;
+}
+
+#pragma mark - localization
+
++ (NSString *)localizedString:(NSString*)key
+{
+  return NSLocalizedString(key, nil);
+}
+
++ (NSString *)localizedString:(NSString *)key tableName:(NSString *)table
+{
+  return NSLocalizedStringFromTable(key, table, nil);
+}
+
+#pragma mark - other
+
+- (NSString *)useAsFileName             // add by shjborage Apr 18, 2012
+{
+  NSString *strTmp = self;
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@"/" withString:@" "];
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@"\\" withString:@" "];
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@":" withString:@" "];
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@"*" withString:@" "];
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@"?" withString:@" "];
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@"\"" withString:@" "];
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@"<" withString:@" "];
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@">" withString:@" "];
+  strTmp = [strTmp stringByReplacingOccurrencesOfString:@"|" withString:@" "];
+  return strTmp;
 }
 
 @end
