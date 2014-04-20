@@ -1,9 +1,15 @@
 SQCommonUtils
 =============
 
-Common Utils SDK for ObjC project.
+Common Utils SDK for ObjC project which Requires iOS 4.0 and later.
 
 ###Relase Note:
+
+V0.2
+
+1. Add UIView+SQFrame support.
+2. Add SQCommonHeader.h to load all the Utils.
+3. Fix some bugs.
 
 V0.1
 
@@ -11,6 +17,9 @@ V0.1
 2.	Requires iOS 4.0 and later.
 
 ###Brief
+
+####UIView+SQFrame
+*	Use `self.view.originX`, so easy and you can use this `self.view.originX = 0.0f`.
 
 ####SQStringUtils
 *	Encode / Decode
