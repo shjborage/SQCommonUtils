@@ -5,7 +5,7 @@ Common Utils SDK for ObjC project which Requires iOS 4.0 and later.
 
 ###Relase Note:
 
-V0.2
+V0.2.0
 
 1. Add UIView+SQFrame support.
 2. Add SQCommonHeader.h to load all the Utils.
