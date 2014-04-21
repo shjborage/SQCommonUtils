@@ -75,7 +75,7 @@ static SQTestManager *g_test;
     [userDefaults setObject:[NSString getCurrentDateTime:@"yyyy-MM-dd"] forKey:kLastUsedDate];
     [userDefaults synchronize];
     
-    SQLOG(@"**************************** App : Today used times:%d, All used times:%d ***************************", uTimes, uAllTimes);
+    SQLOG(@"**************************** App : Today used times:%lu, All used times:%lu ***************************", (unsigned long)uTimes, uAllTimes);
 }
 
 static void Sys_signal_process(int sig)
