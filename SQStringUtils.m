@@ -35,7 +35,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     return @"";
   
   const char *source = [str UTF8String];
-  int strlength  = strlen(source);
+  long strlength  = strlen(source);
   
   char *characters = malloc(((strlength + 2) / 3) * 4);
   if (characters == NULL)
@@ -66,8 +66,8 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 {
 	NSMutableString* s = [NSMutableString string];
 	
-	int start = 0;
-	int len = [self length];
+	long start = 0;
+	long len = [self length];
 	NSCharacterSet* chs = [NSCharacterSet characterSetWithCharactersInString:@"<>&\""];
 	
 	while (start < len) {
