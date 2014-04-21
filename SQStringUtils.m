@@ -59,7 +59,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     else characters[length++] = '=';
   }
   
-  return [[[NSString alloc] initWithBytesNoCopy:characters length:length encoding:NSASCIIStringEncoding freeWhenDone:YES] autorelease];
+  return [[NSString alloc] initWithBytesNoCopy:characters length:length encoding:NSASCIIStringEncoding freeWhenDone:YES];
 }
 
 - (NSString *)escapeHTML
@@ -105,7 +105,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 - (NSString *)unescapeHTML
 {
 	NSMutableString* s = [NSMutableString string];
-	NSMutableString* target = [[self mutableCopy] autorelease];
+	NSMutableString* target = [self mutableCopy];
 	NSCharacterSet* chs = [NSCharacterSet characterSetWithCharactersInString:@"&"];
 	
 	while ([target length] > 0) {
@@ -146,9 +146,10 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
   //    NSStringEncoding enc_gb2312 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
   //    char* temp = (char*)[[NSString stringWithString:target] cStringUsingEncoding:NSUnicodeStringEncoding];
   //    return [NSString stringWithCString:temp encoding:NSUnicodeStringEncoding];
-  NSMutableString* target = [[self mutableCopy] autorelease];
+  NSMutableString* target = [self mutableCopy];
   NSData *tmp_data = [target dataUsingEncoding:NSUnicodeStringEncoding];
-  NSString *tmp_ret = [[[NSString alloc] initWithData:tmp_data encoding:NSUnicodeStringEncoding] autorelease];
+  
+  NSString *tmp_ret = [[NSString alloc] initWithData:tmp_data encoding:NSUnicodeStringEncoding] ;
   return tmp_ret;
 }
 
@@ -208,7 +209,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
    return [strDate substringToIndex:[strDate rangeOfString:@"China Standard Time"].location - 1];
    */
   NSDate *date_now = [NSDate date];
-  NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+  NSDateFormatter *df = [[NSDateFormatter alloc] init];
   //    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
   if ([strFormat length] > 0)
     [df setDateFormat:strFormat];
@@ -245,9 +246,6 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
   NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
   NSUInteger uFlag = kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay |kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond;
   NSDateComponents *dcNew = [gregorian components:uFlag fromDate:date_new];
-  
-  [df release];
-  [gregorian release];
   
   return dcNew;
 }

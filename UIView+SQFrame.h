@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (frame)
+@interface UIView (SQFrame)
 
 - (CGFloat)originX;
 - (CGFloat)originY;

@@ -6,7 +6,7 @@
 
 #import "UIView+SQFrame.h"
 
-@implementation UIView (frame)
+@implementation UIView (SQFrame)
 
 - (CGFloat)originX
 {
