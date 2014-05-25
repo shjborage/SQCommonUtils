@@ -7,6 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define ntoa(l) [NSString stringWithFormat:@"%ld", (long)(l)]
+
 @interface NSString (NSStringUtils)
 
 #pragma mark - encode/decode
