@@ -2,7 +2,7 @@
 //  SQDebugUtils.h
 //
 //  Created by shjborage on Nov 11,2011.
-//  Copyright 2011 Safe&Quick[http://www.saick.net]. All rights reserved.
+//  Copyright 2011 Safe&Quick[http://blog.saick.net]. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

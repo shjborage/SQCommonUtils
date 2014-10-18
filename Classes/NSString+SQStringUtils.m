@@ -2,7 +2,7 @@
 //  StringUtil.m
 //
 //  Created by shjborage on 20111106.
-//  Copyright (c) 2012 Safe&Quick[http://www.saick.net]. All rights reserved.
+//  Copyright (c) 2012 Safe&Quick[http://blog.saick.net]. All rights reserved.
 //
 
 #import "NSString+SQStringUtils.h"

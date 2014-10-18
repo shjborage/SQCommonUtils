@@ -2,7 +2,7 @@
 //  SQDebugUtils.m
 //
 //  Created by Eric Shi on Jul 18, 2012.
-//  Copyright 2012 Safe&Quick[http://www.saick.net]. All rights reserved.
+//  Copyright 2012 Safe&Quick[http://blog.saick.net]. All rights reserved.
 //
 
 #import "SQDebugUtils.h"
