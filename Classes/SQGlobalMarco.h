@@ -8,6 +8,8 @@
 #ifndef _SQGlobalMarco_h
 #define _SQGlobalMarco_h
 
+#define ntoa(l) ([NSString stringWithFormat:@"%ld", (long)(l)])
+
 #define kMinOSVersion   4.0f
 
 #define saferelease(foo) {if(foo != nil) {[foo release]; foo = nil;}}

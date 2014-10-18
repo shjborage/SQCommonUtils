@@ -7,33 +7,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define SQDEBUG                 1       // Total switch
-#define DISABLE_NSLOG           0       // Disable NSLog(also SQLOG)
-#define SQDEBUG_SHOW_MEMORY     1       // Show memory for "- (void)showMemory;"
-
-#if SQDEBUG
-#   define SQLOG(...) NSLog(__VA_ARGS__)
-#   define SQLOG_RECT(r) NSLog(@"(%.1fx%.1f)-(%.1fx%.1f)", \
-            r.origin.x, r.origin.y, r.size.width, r.size.height)
-#   define SQTRACE(s) SQLOG(@"SQTRACE --> file:%@ line:%d fun:%@ TraceInfo:%@ <-- SQTRACE", __FILE_NAME__, __LINE__, __FUNC_NAME__, s)
-#else
-#   define SQLOG(...) {};
-#   define SQLOG_RECT(r) {};
-#   define SQTRACE(s) {};
-#endif
-
-#if DISABLE_NSLOG
-#   define NSLog(...) {};
-#endif
-
-#ifdef __i386__
-//#   define NSLog(...) NSLog(__VA_ARGS__)
-#else
-//#   define NSLog(...) {}
-#endif
-
-//SQLOG(@"file:%@ line:%d fun:%@ ...", __FILE_NAME__, __LINE__, __FUNC_NAME__, ...);
-
 #define __FUNC_NAME__   NSStringFromSelector(_cmd)
 #define __CLASS_NAME__  NSStringFromClass([self class])
 #define __CALL_STACK__  [NSThread callStackSymbols]

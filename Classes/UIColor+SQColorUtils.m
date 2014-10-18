@@ -5,11 +5,11 @@
 //  Copyright 2011 Safe&Quick[http://www.saick.net]. All rights reserved.
 //
 
-#import "SQColorUtils.h"
+#import "UIColor+SQColorUtils.h"
 
-@implementation UIColor (UIColorUtils)
+@implementation UIColor (SQColorUtils)
 
-- (UIImage *)createImage
+- (UIImage *)sq_createImage
 {
     CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);

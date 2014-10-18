@@ -7,7 +7,7 @@
 
 #import "SQDebugUtils.h"
 #import <mach/mach.h>
-#import "SQStringUtils.h"
+#import "NSString+SQStringUtils.h"
 
 #define kLastUsedDate       @"test_LastUsedDate"
 #define kStartUpTimesPerDay @"test_StartUpTimesPerDay"
@@ -43,9 +43,7 @@ static SQTestManager *g_test;
 
 - (void)workTimer:(NSTimer *)timer
 {
-#if SQDEBUG_SHOW_MEMORY
-    SQLOG(@"--------------------Memory Used: %f MB", (float)[self getUsedMemory] / 1024.0f / 1024.0f);
-#endif
+    NSLog(@"--------------------Memory Used: %f MB", (float)[self getUsedMemory] / 1024.0f / 1024.0f);
 }
 
 - (void)showMemory
@@ -58,9 +56,9 @@ static SQTestManager *g_test;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *strLastUsedDate = [userDefaults objectForKey:kLastUsedDate];
     if (strLastUsedDate == nil) {
-        [userDefaults setObject:[NSString getCurrentDateTime:@"yyyy-MM-dd"] forKey:kLastUsedDate];
+        [userDefaults setObject:[NSString sq_getCurrentDateTime:@"yyyy-MM-dd"] forKey:kLastUsedDate];
     } else {
-        if ([strLastUsedDate isEqualToString:[NSString getCurrentDateTime:@"yyyy-MM-dd"]]) {
+        if ([strLastUsedDate isEqualToString:[NSString sq_getCurrentDateTime:@"yyyy-MM-dd"]]) {
             
         } else {
             [userDefaults setInteger:0 forKey:kStartUpTimesPerDay];
@@ -72,10 +70,11 @@ static SQTestManager *g_test;
     [userDefaults setInteger:++uTimes forKey:kStartUpTimesPerDay];
     [userDefaults setInteger:++uAllTimes forKey:kAllUsedDate];
     
-    [userDefaults setObject:[NSString getCurrentDateTime:@"yyyy-MM-dd"] forKey:kLastUsedDate];
+    [userDefaults setObject:[NSString sq_getCurrentDateTime:@"yyyy-MM-dd"] forKey:kLastUsedDate];
     [userDefaults synchronize];
     
-    SQLOG(@"**************************** App : Today used times:%lu, All used times:%lu ***************************", (unsigned long)uTimes, (unsigned long)uAllTimes);
+    NSLog(@"**************************** App : Today used times:%lu, All used times:%lu ***************************",
+          (unsigned long)uTimes, (unsigned long)uAllTimes);
 }
 
 static void Sys_signal_process(int sig)
@@ -115,7 +114,8 @@ static const int sys_fatal_signals[] =
     NSString *logPath = [documentDir stringByAppendingPathComponent:strDate];
     freopen([logPath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
     
-    SQLOG(@"---------------start Date:%@-------------------------------logPath:%@-------------", date.description, logPath);
+    NSLog(@"---------------start Date:%@-------------------------------logPath:%@-------------",
+          date.description, logPath);
 }
 
 @end
