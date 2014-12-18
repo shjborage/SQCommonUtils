@@ -7,35 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4771727A1A425894006310F1 /* NSArray+SQNSJSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 4771725E1A425894006310F1 /* NSArray+SQNSJSONSerialization.h */; };
+		4771727B1A425894006310F1 /* NSArray+SQNSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4771725F1A425894006310F1 /* NSArray+SQNSJSONSerialization.m */; };
+		4771727C1A425894006310F1 /* NSDictionary+SQNSJSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172601A425894006310F1 /* NSDictionary+SQNSJSONSerialization.h */; };
+		4771727D1A425894006310F1 /* NSDictionary+SQNSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172611A425894006310F1 /* NSDictionary+SQNSJSONSerialization.m */; };
+		4771727E1A425894006310F1 /* NSString+SQNSJSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172621A425894006310F1 /* NSString+SQNSJSONSerialization.h */; };
+		4771727F1A425894006310F1 /* NSString+SQNSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172631A425894006310F1 /* NSString+SQNSJSONSerialization.m */; };
+		477172801A425894006310F1 /* NSData+SQBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172641A425894006310F1 /* NSData+SQBase64.h */; };
+		477172811A425894006310F1 /* NSData+SQBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172651A425894006310F1 /* NSData+SQBase64.m */; };
+		477172821A425894006310F1 /* NSDictionary+SQExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172661A425894006310F1 /* NSDictionary+SQExt.h */; };
+		477172831A425894006310F1 /* NSDictionary+SQExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172671A425894006310F1 /* NSDictionary+SQExt.m */; };
+		477172841A425894006310F1 /* NSString+SQPhoneNum.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172681A425894006310F1 /* NSString+SQPhoneNum.h */; };
+		477172851A425894006310F1 /* NSString+SQPhoneNum.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172691A425894006310F1 /* NSString+SQPhoneNum.m */; };
+		477172861A425894006310F1 /* NSString+SQStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4771726A1A425894006310F1 /* NSString+SQStringUtils.h */; };
+		477172871A425894006310F1 /* NSString+SQStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4771726B1A425894006310F1 /* NSString+SQStringUtils.m */; };
+		477172881A425894006310F1 /* UIColor+SQColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4771726C1A425894006310F1 /* UIColor+SQColorUtils.h */; };
+		477172891A425894006310F1 /* UIColor+SQColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4771726D1A425894006310F1 /* UIColor+SQColorUtils.m */; };
+		4771728A1A425894006310F1 /* UINavigationItem+SQStyleMargin.h in Headers */ = {isa = PBXBuildFile; fileRef = 4771726E1A425894006310F1 /* UINavigationItem+SQStyleMargin.h */; };
+		4771728B1A425894006310F1 /* UINavigationItem+SQStyleMargin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4771726F1A425894006310F1 /* UINavigationItem+SQStyleMargin.m */; };
+		4771728C1A425894006310F1 /* UIView+SQFindView.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172701A425894006310F1 /* UIView+SQFindView.h */; };
+		4771728D1A425894006310F1 /* UIView+SQFindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172711A425894006310F1 /* UIView+SQFindView.m */; };
+		4771728E1A425894006310F1 /* UIView+SQFrameAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172721A425894006310F1 /* UIView+SQFrameAddition.h */; };
+		4771728F1A425894006310F1 /* UIView+SQFrameAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172731A425894006310F1 /* UIView+SQFrameAddition.m */; };
+		477172901A425894006310F1 /* UIView+SQRemoveView.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172741A425894006310F1 /* UIView+SQRemoveView.h */; };
+		477172911A425894006310F1 /* UIView+SQRemoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172751A425894006310F1 /* UIView+SQRemoveView.m */; };
+		477172921A425894006310F1 /* SQCommonHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172761A425894006310F1 /* SQCommonHeader.h */; };
+		477172931A425894006310F1 /* SQDebugUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172771A425894006310F1 /* SQDebugUtils.h */; };
+		477172941A425894006310F1 /* SQDebugUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 477172781A425894006310F1 /* SQDebugUtils.m */; };
+		477172951A425894006310F1 /* SQGlobalMarco.h in Headers */ = {isa = PBXBuildFile; fileRef = 477172791A425894006310F1 /* SQGlobalMarco.h */; };
 		477459F119F2B2D400DC2255 /* SQCommonUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 477459F019F2B2D400DC2255 /* SQCommonUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		477459FB19F2B2D400DC2255 /* SQCommonUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 477459FA19F2B2D400DC2255 /* SQCommonUtilsTests.m */; };
-		47745A0F19F2B33C00DC2255 /* UIColor+SQColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 47745A0519F2B33C00DC2255 /* UIColor+SQColorUtils.h */; };
-		47745A1019F2B33C00DC2255 /* UIColor+SQColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 47745A0619F2B33C00DC2255 /* UIColor+SQColorUtils.m */; };
-		47745A1219F2B33C00DC2255 /* SQDebugUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 47745A0819F2B33C00DC2255 /* SQDebugUtils.h */; };
-		47745A1319F2B33C00DC2255 /* SQDebugUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 47745A0919F2B33C00DC2255 /* SQDebugUtils.m */; };
-		47745A1419F2B33C00DC2255 /* SQGlobalMarco.h in Headers */ = {isa = PBXBuildFile; fileRef = 47745A0A19F2B33C00DC2255 /* SQGlobalMarco.h */; };
-		47745A1519F2B33C00DC2255 /* NSString+SQStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 47745A0B19F2B33C00DC2255 /* NSString+SQStringUtils.h */; };
-		47745A1619F2B33C00DC2255 /* NSString+SQStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 47745A0C19F2B33C00DC2255 /* NSString+SQStringUtils.m */; };
-		47745A1719F2B33C00DC2255 /* UIView+SQFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 47745A0D19F2B33C00DC2255 /* UIView+SQFrame.h */; };
-		47745A1819F2B33C00DC2255 /* UIView+SQFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 47745A0E19F2B33C00DC2255 /* UIView+SQFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4771725E1A425894006310F1 /* NSArray+SQNSJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SQNSJSONSerialization.h"; sourceTree = "<group>"; };
+		4771725F1A425894006310F1 /* NSArray+SQNSJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SQNSJSONSerialization.m"; sourceTree = "<group>"; };
+		477172601A425894006310F1 /* NSDictionary+SQNSJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SQNSJSONSerialization.h"; sourceTree = "<group>"; };
+		477172611A425894006310F1 /* NSDictionary+SQNSJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SQNSJSONSerialization.m"; sourceTree = "<group>"; };
+		477172621A425894006310F1 /* NSString+SQNSJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQNSJSONSerialization.h"; sourceTree = "<group>"; };
+		477172631A425894006310F1 /* NSString+SQNSJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SQNSJSONSerialization.m"; sourceTree = "<group>"; };
+		477172641A425894006310F1 /* NSData+SQBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SQBase64.h"; sourceTree = "<group>"; };
+		477172651A425894006310F1 /* NSData+SQBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SQBase64.m"; sourceTree = "<group>"; };
+		477172661A425894006310F1 /* NSDictionary+SQExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SQExt.h"; sourceTree = "<group>"; };
+		477172671A425894006310F1 /* NSDictionary+SQExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SQExt.m"; sourceTree = "<group>"; };
+		477172681A425894006310F1 /* NSString+SQPhoneNum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQPhoneNum.h"; sourceTree = "<group>"; };
+		477172691A425894006310F1 /* NSString+SQPhoneNum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SQPhoneNum.m"; sourceTree = "<group>"; };
+		4771726A1A425894006310F1 /* NSString+SQStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQStringUtils.h"; sourceTree = "<group>"; };
+		4771726B1A425894006310F1 /* NSString+SQStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SQStringUtils.m"; sourceTree = "<group>"; };
+		4771726C1A425894006310F1 /* UIColor+SQColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SQColorUtils.h"; sourceTree = "<group>"; };
+		4771726D1A425894006310F1 /* UIColor+SQColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SQColorUtils.m"; sourceTree = "<group>"; };
+		4771726E1A425894006310F1 /* UINavigationItem+SQStyleMargin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+SQStyleMargin.h"; sourceTree = "<group>"; };
+		4771726F1A425894006310F1 /* UINavigationItem+SQStyleMargin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+SQStyleMargin.m"; sourceTree = "<group>"; };
+		477172701A425894006310F1 /* UIView+SQFindView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQFindView.h"; sourceTree = "<group>"; };
+		477172711A425894006310F1 /* UIView+SQFindView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQFindView.m"; sourceTree = "<group>"; };
+		477172721A425894006310F1 /* UIView+SQFrameAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQFrameAddition.h"; sourceTree = "<group>"; };
+		477172731A425894006310F1 /* UIView+SQFrameAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQFrameAddition.m"; sourceTree = "<group>"; };
+		477172741A425894006310F1 /* UIView+SQRemoveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQRemoveView.h"; sourceTree = "<group>"; };
+		477172751A425894006310F1 /* UIView+SQRemoveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQRemoveView.m"; sourceTree = "<group>"; };
+		477172761A425894006310F1 /* SQCommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCommonHeader.h; sourceTree = "<group>"; };
+		477172771A425894006310F1 /* SQDebugUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDebugUtils.h; sourceTree = "<group>"; };
+		477172781A425894006310F1 /* SQDebugUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDebugUtils.m; sourceTree = "<group>"; };
+		477172791A425894006310F1 /* SQGlobalMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQGlobalMarco.h; sourceTree = "<group>"; };
 		477459EB19F2B2D400DC2255 /* SQCommonUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SQCommonUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		477459EF19F2B2D400DC2255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477459F019F2B2D400DC2255 /* SQCommonUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQCommonUtils.h; sourceTree = "<group>"; };
 		477459F619F2B2D400DC2255 /* SQCommonUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQCommonUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		477459F919F2B2D400DC2255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477459FA19F2B2D400DC2255 /* SQCommonUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQCommonUtilsTests.m; sourceTree = "<group>"; };
-		47745A0519F2B33C00DC2255 /* UIColor+SQColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SQColorUtils.h"; sourceTree = "<group>"; };
-		47745A0619F2B33C00DC2255 /* UIColor+SQColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SQColorUtils.m"; sourceTree = "<group>"; };
-		47745A0819F2B33C00DC2255 /* SQDebugUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDebugUtils.h; sourceTree = "<group>"; };
-		47745A0919F2B33C00DC2255 /* SQDebugUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDebugUtils.m; sourceTree = "<group>"; };
-		47745A0A19F2B33C00DC2255 /* SQGlobalMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQGlobalMarco.h; sourceTree = "<group>"; };
-		47745A0B19F2B33C00DC2255 /* NSString+SQStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQStringUtils.h"; sourceTree = "<group>"; };
-		47745A0C19F2B33C00DC2255 /* NSString+SQStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SQStringUtils.m"; sourceTree = "<group>"; };
-		47745A0D19F2B33C00DC2255 /* UIView+SQFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQFrame.h"; sourceTree = "<group>"; };
-		47745A0E19F2B33C00DC2255 /* UIView+SQFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQFrame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +94,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4771725C1A425894006310F1 /* Catagories */ = {
+			isa = PBXGroup;
+			children = (
+				4771725D1A425894006310F1 /* JSONSerialization */,
+				477172641A425894006310F1 /* NSData+SQBase64.h */,
+				477172651A425894006310F1 /* NSData+SQBase64.m */,
+				477172661A425894006310F1 /* NSDictionary+SQExt.h */,
+				477172671A425894006310F1 /* NSDictionary+SQExt.m */,
+				477172681A425894006310F1 /* NSString+SQPhoneNum.h */,
+				477172691A425894006310F1 /* NSString+SQPhoneNum.m */,
+				4771726A1A425894006310F1 /* NSString+SQStringUtils.h */,
+				4771726B1A425894006310F1 /* NSString+SQStringUtils.m */,
+				4771726C1A425894006310F1 /* UIColor+SQColorUtils.h */,
+				4771726D1A425894006310F1 /* UIColor+SQColorUtils.m */,
+				4771726E1A425894006310F1 /* UINavigationItem+SQStyleMargin.h */,
+				4771726F1A425894006310F1 /* UINavigationItem+SQStyleMargin.m */,
+				477172701A425894006310F1 /* UIView+SQFindView.h */,
+				477172711A425894006310F1 /* UIView+SQFindView.m */,
+				477172721A425894006310F1 /* UIView+SQFrameAddition.h */,
+				477172731A425894006310F1 /* UIView+SQFrameAddition.m */,
+				477172741A425894006310F1 /* UIView+SQRemoveView.h */,
+				477172751A425894006310F1 /* UIView+SQRemoveView.m */,
+			);
+			path = Catagories;
+			sourceTree = "<group>";
+		};
+		4771725D1A425894006310F1 /* JSONSerialization */ = {
+			isa = PBXGroup;
+			children = (
+				4771725E1A425894006310F1 /* NSArray+SQNSJSONSerialization.h */,
+				4771725F1A425894006310F1 /* NSArray+SQNSJSONSerialization.m */,
+				477172601A425894006310F1 /* NSDictionary+SQNSJSONSerialization.h */,
+				477172611A425894006310F1 /* NSDictionary+SQNSJSONSerialization.m */,
+				477172621A425894006310F1 /* NSString+SQNSJSONSerialization.h */,
+				477172631A425894006310F1 /* NSString+SQNSJSONSerialization.m */,
+			);
+			path = JSONSerialization;
+			sourceTree = "<group>";
+		};
 		477459E119F2B2D400DC2255 = {
 			isa = PBXGroup;
 			children = (
@@ -112,15 +189,11 @@
 		47745A0419F2B33C00DC2255 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				47745A0A19F2B33C00DC2255 /* SQGlobalMarco.h */,
-				47745A0819F2B33C00DC2255 /* SQDebugUtils.h */,
-				47745A0919F2B33C00DC2255 /* SQDebugUtils.m */,
-				47745A0D19F2B33C00DC2255 /* UIView+SQFrame.h */,
-				47745A0E19F2B33C00DC2255 /* UIView+SQFrame.m */,
-				47745A0519F2B33C00DC2255 /* UIColor+SQColorUtils.h */,
-				47745A0619F2B33C00DC2255 /* UIColor+SQColorUtils.m */,
-				47745A0B19F2B33C00DC2255 /* NSString+SQStringUtils.h */,
-				47745A0C19F2B33C00DC2255 /* NSString+SQStringUtils.m */,
+				4771725C1A425894006310F1 /* Catagories */,
+				477172761A425894006310F1 /* SQCommonHeader.h */,
+				477172771A425894006310F1 /* SQDebugUtils.h */,
+				477172781A425894006310F1 /* SQDebugUtils.m */,
+				477172791A425894006310F1 /* SQGlobalMarco.h */,
 			);
 			name = Classes;
 			path = ../../Classes;
@@ -133,12 +206,22 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47745A1719F2B33C00DC2255 /* UIView+SQFrame.h in Headers */,
-				47745A1219F2B33C00DC2255 /* SQDebugUtils.h in Headers */,
-				47745A0F19F2B33C00DC2255 /* UIColor+SQColorUtils.h in Headers */,
-				47745A1519F2B33C00DC2255 /* NSString+SQStringUtils.h in Headers */,
+				4771727E1A425894006310F1 /* NSString+SQNSJSONSerialization.h in Headers */,
+				477172901A425894006310F1 /* UIView+SQRemoveView.h in Headers */,
+				477172801A425894006310F1 /* NSData+SQBase64.h in Headers */,
 				477459F119F2B2D400DC2255 /* SQCommonUtils.h in Headers */,
-				47745A1419F2B33C00DC2255 /* SQGlobalMarco.h in Headers */,
+				477172821A425894006310F1 /* NSDictionary+SQExt.h in Headers */,
+				4771728C1A425894006310F1 /* UIView+SQFindView.h in Headers */,
+				4771728E1A425894006310F1 /* UIView+SQFrameAddition.h in Headers */,
+				4771728A1A425894006310F1 /* UINavigationItem+SQStyleMargin.h in Headers */,
+				477172921A425894006310F1 /* SQCommonHeader.h in Headers */,
+				477172931A425894006310F1 /* SQDebugUtils.h in Headers */,
+				477172881A425894006310F1 /* UIColor+SQColorUtils.h in Headers */,
+				4771727A1A425894006310F1 /* NSArray+SQNSJSONSerialization.h in Headers */,
+				477172951A425894006310F1 /* SQGlobalMarco.h in Headers */,
+				477172861A425894006310F1 /* NSString+SQStringUtils.h in Headers */,
+				477172841A425894006310F1 /* NSString+SQPhoneNum.h in Headers */,
+				4771727C1A425894006310F1 /* NSDictionary+SQNSJSONSerialization.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,10 +320,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47745A1619F2B33C00DC2255 /* NSString+SQStringUtils.m in Sources */,
-				47745A1019F2B33C00DC2255 /* UIColor+SQColorUtils.m in Sources */,
-				47745A1819F2B33C00DC2255 /* UIView+SQFrame.m in Sources */,
-				47745A1319F2B33C00DC2255 /* SQDebugUtils.m in Sources */,
+				4771728D1A425894006310F1 /* UIView+SQFindView.m in Sources */,
+				4771727F1A425894006310F1 /* NSString+SQNSJSONSerialization.m in Sources */,
+				477172851A425894006310F1 /* NSString+SQPhoneNum.m in Sources */,
+				477172831A425894006310F1 /* NSDictionary+SQExt.m in Sources */,
+				4771727D1A425894006310F1 /* NSDictionary+SQNSJSONSerialization.m in Sources */,
+				477172911A425894006310F1 /* UIView+SQRemoveView.m in Sources */,
+				4771727B1A425894006310F1 /* NSArray+SQNSJSONSerialization.m in Sources */,
+				4771728B1A425894006310F1 /* UINavigationItem+SQStyleMargin.m in Sources */,
+				477172891A425894006310F1 /* UIColor+SQColorUtils.m in Sources */,
+				477172941A425894006310F1 /* SQDebugUtils.m in Sources */,
+				4771728F1A425894006310F1 /* UIView+SQFrameAddition.m in Sources */,
+				477172871A425894006310F1 /* NSString+SQStringUtils.m in Sources */,
+				477172811A425894006310F1 /* NSData+SQBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +510,7 @@
 				47745A0019F2B2D400DC2255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47745A0119F2B2D400DC2255 /* Build configuration list for PBXNativeTarget "SQCommonUtilsTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +519,7 @@
 				47745A0319F2B2D400DC2255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

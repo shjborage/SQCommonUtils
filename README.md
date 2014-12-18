@@ -5,13 +5,13 @@ Common Utils SDK for ObjC project which Requires iOS 4.0 and later.
 
 ###Relase Note:
 
-V0.2.2
+**V0.3.0**
 
-1. Enhance the RGB and UIColorFromRGB usage.
-2. Add kScreenSize
-3. Add Radians and degress converts.
+1. Full update for code style;
+2. Add more useful feature.
+3. Support this in other 'SDK'.
 
-V0.2.1
+**V0.2.1**
 
 1. ARC support
 2. Fix some warnning

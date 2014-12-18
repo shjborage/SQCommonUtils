@@ -11,7 +11,12 @@
 
 - (UIImage *)sq_createImage
 {
-    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    return [self sq_createImageWithSize:CGSizeMake(1.0f, 1.0f)];
+}
+
+- (UIImage *)sq_createImageWithSize:(CGSize)size
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [self CGColor]);
@@ -20,6 +25,14 @@
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;
+}
+
++ (UIColor *)sq_randomColor
+{
+    return [UIColor colorWithRed:(CGFloat)255 / (arc4random()%255)
+                           green:(CGFloat)255 / (arc4random()%255)
+                            blue:(CGFloat)255 / (arc4random()%255)
+                           alpha:1.0f];
 }
 
 @end

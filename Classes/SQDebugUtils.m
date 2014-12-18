@@ -2,7 +2,7 @@
 //  SQDebugUtils.m
 //
 //  Created by Eric Shi on Jul 18, 2012.
-//  Copyright 2012 Safe&Quick[http://blog.saick.net]. All rights reserved.
+//  Copyright 2012 Safe&Quick[http://www.saick.net]. All rights reserved.
 //
 
 #import "SQDebugUtils.h"
@@ -43,7 +43,9 @@ static SQTestManager *g_test;
 
 - (void)workTimer:(NSTimer *)timer
 {
-    NSLog(@"--------------------Memory Used: %f MB", (float)[self getUsedMemory] / 1024.0f / 1024.0f);
+#if SQDEBUG_SHOW_MEMORY
+    SQLOG(@"--------------------Memory Used: %f MB", (float)[self getUsedMemory] / 1024.0f / 1024.0f);
+#endif
 }
 
 - (void)showMemory
@@ -73,8 +75,7 @@ static SQTestManager *g_test;
     [userDefaults setObject:[NSString sq_getCurrentDateTime:@"yyyy-MM-dd"] forKey:kLastUsedDate];
     [userDefaults synchronize];
     
-    NSLog(@"**************************** App : Today used times:%lu, All used times:%lu ***************************",
-          (unsigned long)uTimes, (unsigned long)uAllTimes);
+    SQLOG(@"**************************** App : Today used times:%lu, All used times:%lu ***************************", (unsigned long)uTimes, (unsigned long)uAllTimes);
 }
 
 static void Sys_signal_process(int sig)
@@ -114,8 +115,7 @@ static const int sys_fatal_signals[] =
     NSString *logPath = [documentDir stringByAppendingPathComponent:strDate];
     freopen([logPath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
     
-    NSLog(@"---------------start Date:%@-------------------------------logPath:%@-------------",
-          date.description, logPath);
+    SQLOG(@"---------------start Date:%@-------------------------------logPath:%@-------------", date.description, logPath);
 }
 
 @end
